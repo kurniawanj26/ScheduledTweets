@@ -17,6 +17,17 @@ Rails.application.routes.draw do
   # will look into controllers folder
   get "about", to: "about#index"
 
+  # sign up
+  get "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"  
+
+  # sign in
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"  
+
+  # logout
+  delete "logout", to: "sessions#destroy"
+
   # or it can be like code below 
   # get "about-us", to: "about#index", as: :about
 
